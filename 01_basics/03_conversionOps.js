@@ -39,3 +39,26 @@ let someNumber = 35
 let strNumber = String(someNumber)
 console.log(strNumber) // '35'
 console.log(typeof strNumber) // string
+
+// **************** Operations ********************
+
+let value = 5
+let negValue = -value
+console.log(negValue) // -5
+
+let str1 ="Vineet "
+let str2 ="Sharma"
+console.log(str1+str2) // Vineet Sharma
+
+console.log("1"+2) // 12
+console.log("1"+2+2) // 122
+console.log(1+2+"2") // 32
+
+console.log(true)  // true
+console.log(+true) // 1
+// console.log(true+) // error
+
+let gameCounter = 100
+gameCounter++  // ++gameCounter
+console.log(gameCounter) //101
+
