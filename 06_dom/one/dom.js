@@ -4,6 +4,10 @@
 // document.getElementsByClassName("heading")
 // document.getElementsByTagName("div")
 
+// document.querySelector("#title") // # for id
+// document.querySelector(".heading") // . for class
+// document.querySelector("div") 
+
 // Attributes
 
 // document.getElementById("title").getAttribute("class")
@@ -16,4 +20,6 @@ title.style.borderRadius = "15px"
 
 //
 
-title.innerText 
+// title.innerText // This only shows visible text 
+
+// title.innerContent // This shows every content not only visible text but also shows hidden content/text
