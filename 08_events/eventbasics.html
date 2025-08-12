@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eventst</title>
+</head>
+<body style="background-color: #414141; color: aliceblue;">
+    <h2>Images</h2>
+    <div>
+        <ul id="images">
+            <li><img width="200px" id="forest" src="https://images.pexels.com/photos/33409682/pexels-photo-33409682.jpeg" alt="forest"></li>
+            <li><img width="200px" id="valley" src="https://images.pexels.com/photos/18682254/pexels-photo-18682254.jpeg" alt="valley"></li>
+            <li><img width="200px" id="beach" src="https://images.pexels.com/photos/248797/pexels-photo-248797.jpeg" alt="beach"></li>
+            <li><img width="200px" id="city" src="https://images.pexels.com/photos/373912/pexels-photo-373912.jpeg" alt="city"></li>
+            <li><img width="200px" id="desert" src="https://images.pexels.com/photos/248021/pexels-photo-248021.jpeg" alt="desert"></li>
+            <li><img width="200px" id="lake" src="https://images.pexels.com/photos/460621/pexels-photo-460621.jpeg" alt="lake"></li>
+            <li><img width="200px" id="flower" src="https://images.pexels.com/photos/36764/marguerite-daisy-beautiful-beauty.jpg" alt="flower"></li>
+            <li><img width="200px" id="sunset" src="https://images.pexels.com/photos/355465/pexels-photo-355465.jpeg" alt="sunset"></li>
+            <li><img width="200px" id="reflection" src="https://images.pexels.com/photos/459225/pexels-photo-459225.jpeg" alt="reflection"></li>
+            <li><img width="200px" id="aurora" src="https://images.pexels.com/photos/258112/pexels-photo-258112.jpeg" alt="aurora"></li>
+            <li><a style="color: aliceblue ;" href="https://google.com" id="google">Google</a></li>
+        </ul>
+    </div>
+</body>
+<script>
+
+    // document.getElementById("lake").onclick = ()=>{
+    //     alert("lake clicked")
+    // } 
+    //attachEvent()
+    // The above and injecting event directly to html is not quiet best approach.
+
+// ---------------------------------------------------------
+    
+    // Need to learn  in EventListener : 
+    // type, timestamp, preventDefault
+    // target, toElement, srcElement, currentTarget
+    // altkey, ctrlkey, shiftkey, keyCode
+
+    // document.getElementById("lake").addEventListener("click", (e)=>{
+    //     console.log(e)
+    // })
+
+// -------------------------------------------------------
+    // Event Propagation - Bubbling Up - Bottom to Top
+/*
+
+    document.getElementById("images").addEventListener("click", (e)=>{
+        console.log("clicked inside the ul")
+    })
+    document.getElementById("lake").addEventListener("click", (e)=>{
+        console.log("lake clicked")
+    })
+    
+*/   
+   // lake clicked --> clicked inside the ul
+
+// -------------------------------------------------------
+    // Capturing Mode - Top to bottom
+/*
+    document.getElementById("images").addEventListener("click", (e)=>{
+        console.log("clicked inside the ul")
+    },true)
+    document.getElementById("lake").addEventListener("click", (e)=>{
+        console.log("lake clicked")
+    }, true)
+
+    // clicked inside the ul --> lake clicked
+*/
+
+// ---------------------------------------------------------
+    // Preventing Event Propagation
+/*
+    document.getElementById("images").addEventListener("click", (e)=>{
+        console.log("clicked inside the ul")
+    })
+    document.getElementById("lake").addEventListener("click", (e)=>{
+        console.log("lake clicked")
+        e.stopPropagation()
+    })
+    
+    // lake clicked
+*/
+
+// ---------------------------------------------------------
+    // Prevent Default
+/*
+    document.getElementById("google").addEventListener("click",(e) => {
+        console.log("google clicked")
+        e.preventDefault()
+    })
+
+    // Link clicked but website not opened
+*/
+
+// ---------------------------------------------------------
+    // Mini-Project : remove images by clicking on them
+/*
+    document.querySelector("#images").addEventListener("click",(e) => {
+        if (e.target,tagName === 'IMG'){
+            // e.target.parentNode.remove()
+            let removeIt = e.target.parentNode
+            removeIt.remove()
+            // removeIt.parentNode.removeChild(removeIt)
+        }
+    })
+*/
+
+</script>
+</html>
